@@ -2,7 +2,7 @@
 #include <string.h>
 #define MAX 100
 
-typedef struct{
+typedef struct {
 	char name[10];
 	int arr[6];
 }Student;
@@ -99,7 +99,7 @@ int main(void)
 	int total_num = 0; // 총 학생 수
 	Student data[MAX];
 	char a;
-	do{
+	do {
 		INPUT(data, total_num);
 		total_num++;
 		printf("입력을 종료하시겠습니까\n");

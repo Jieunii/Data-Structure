@@ -31,7 +31,7 @@ int RANK(int total_num, int arr[][6], int fix)
 void PRINT(char student[][10], int arr[][6], int total_num)
 {
 
-	printf("ì´ë¦„	êµ­ì–´	ì˜ì–´	ìˆ˜í•™	í•©ê³„	í‰ê· 	ë“±ìˆ˜\n");
+	printf("ÀÌ¸§	±¹¾î	¿µ¾î	¼öÇĞ	ÇÕ°è	Æò±Õ	µî¼ö\n");
 	printf("====================================================\n");
 	for (int i = 0; i < total_num; i++)
 	{
@@ -51,10 +51,10 @@ void SEARCH(char student[][10], int arr[][6], int total_num)
 	char search[10];
 	while (1)
 	{
-		printf("ê²€ìƒ‰í•˜ê³ ìí•˜ëŠ” ì‚¬ëŒì˜ ì´ë¦„: "); // 1
+		printf("°Ë»öÇÏ°íÀÚÇÏ´Â »ç¶÷ÀÇ ÀÌ¸§: "); // 1
 		scanf("%s", search);
-		int search_idx = -1; // ê²€ìƒ‰í•˜ê³ ìí•˜ëŠ” ì‚¬ëŒì˜ id(ì¸ë±ìŠ¤) 
-		for (int i = 0; i < total_num; i++) // ê²€ìƒ‰
+		int search_idx = -1; // °Ë»öÇÏ°íÀÚÇÏ´Â »ç¶÷ÀÇ id(ÀÎµ¦½º) 
+		for (int i = 0; i < total_num; i++) // °Ë»ö
 		{
 
 			if (strcmp(search, student[i]) == 0)
@@ -63,45 +63,45 @@ void SEARCH(char student[][10], int arr[][6], int total_num)
 				break;
 			}
 		}
-		// search idxê°€ -1ì´ ì•„ë‹ˆë©´ ë°‘ì—, -1ì´ë©´ ë‹¤ì‹œ ìœ„ë¡œ 
+		// search idx°¡ -1ÀÌ ¾Æ´Ï¸é ¹Ø¿¡, -1ÀÌ¸é ´Ù½Ã À§·Î 
 
 		if (search_idx != -1)
 		{
-			printf("ì´ë¦„: %s\n", student[search_idx]);
-			printf("êµ­ì–´: %dì \nì˜ì–´: %dì \nìˆ˜í•™: %dì \n", arr[search_idx][0], arr[search_idx][1], arr[search_idx][2]);
-			printf("í•©ê³„: %dì \n", arr[search_idx][3]);
-			printf("í‰ê· : %dì \n", arr[search_idx][4]);
-			printf("ë“±ìˆ˜: %dë“±\n", arr[search_idx][5]);
+			printf("ÀÌ¸§: %s\n", student[search_idx]);
+			printf("±¹¾î: %dÁ¡\n¿µ¾î: %dÁ¡\n¼öÇĞ: %dÁ¡\n", arr[search_idx][0], arr[search_idx][1], arr[search_idx][2]);
+			printf("ÇÕ°è: %dÁ¡\n", arr[search_idx][3]);
+			printf("Æò±Õ: %dÁ¡\n", arr[search_idx][4]);
+			printf("µî¼ö: %dµî\n", arr[search_idx][5]);
 			break;
 		}
-		printf("ê²€ìƒ‰í•˜ê³ ì í•˜ëŠ” ì‚¬ëŒì´ ì—†ìŠµë‹ˆë‹¤.\n\n"); // 2 -> 1
+		printf("°Ë»öÇÏ°íÀÚ ÇÏ´Â »ç¶÷ÀÌ ¾ø½À´Ï´Ù.\n\n"); // 2 -> 1
 	}
 }
 
 void INPUT(char student[][10], int arr[][6], int total_num)
 {
-	printf("ì´ë¦„ ì…ë ¥:");
+	printf("ÀÌ¸§ ÀÔ·Â:");
 	scanf("%s", student[total_num]);
-	printf("êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì„±ì  ì…ë ¥:");
+	printf("±¹¾î, ¿µ¾î, ¼öÇĞ ¼ºÀû ÀÔ·Â:");
 	for (int j = 0; j < 3; j++)
 	{
 		scanf("%d", &arr[total_num][j]);
 	}
-	arr[total_num][3] = SUM(arr[total_num]); // í•©ê³„ ì €ì¥
+	arr[total_num][3] = SUM(arr[total_num]); // ÇÕ°è ÀúÀå
 	arr[total_num][4] = AVG(arr[total_num][3]);
 }
 
 int main(void)
 {
-	int total_num = 0; // ì´ í•™ìƒ ìˆ˜
-	char student[MAX][10]; // ì´ë¦„
-	int arr[MAX][6]; // data(ìˆ˜í•™, ì˜ì–´, ...)
+	int total_num = 0; // ÃÑ ÇĞ»ı ¼ö
+	char student[MAX][10]; // ÀÌ¸§
+	int arr[MAX][6]; // data(¼öÇĞ, ¿µ¾î, ...)
 	char a;
 
-	do{
+	do {
 		INPUT(student, arr, total_num);
 		total_num++;
-		printf("ì…ë ¥ì„ ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ\n");
+		printf("ÀÔ·ÂÀ» Á¾·áÇÏ½Ã°Ú½À´Ï±î\n");
 		scanf(" %c", &a);
 	} while (a == 'n');
 
